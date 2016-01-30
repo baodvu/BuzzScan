@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BuzzcardScanner
 //
-//  Created by Mac User on 1/26/16.
+//  Created by Bao Vu on 1/26/16.
 //
 //
 

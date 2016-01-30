@@ -7,9 +7,8 @@
 //
 
 import XCTest
-@testable import BuzzcardScanner
 
-class BuzzcardScannerTests: XCTestCase {
+class BuzzScanTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
