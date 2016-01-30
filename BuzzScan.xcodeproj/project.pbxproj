@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632E28B31C5C839E002816AC /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 632E28B11C5C839E002816AC /* Images */; };
+		632E28B41C5C839E002816AC /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 632E28B21C5C839E002816AC /* README.md */; };
 		633F2F591C5BF1DC0003FDDA /* IDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633F2F581C5BF1DC0003FDDA /* IDModel.swift */; };
 		633F2F5F1C5BF28B0003FDDA /* IDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633F2F5E1C5BF28B0003FDDA /* IDTabBarController.swift */; };
 		635542471C57DD26000868FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635542461C57DD26000868FA /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		632E28B11C5C839E002816AC /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		632E28B21C5C839E002816AC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		633F2F581C5BF1DC0003FDDA /* IDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDModel.swift; sourceTree = "<group>"; };
 		633F2F5E1C5BF28B0003FDDA /* IDTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDTabBarController.swift; sourceTree = "<group>"; };
 		635542431C57DD26000868FA /* BuzzScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuzzScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +75,8 @@
 		6355423A1C57DD26000868FA = {
 			isa = PBXGroup;
 			children = (
+				632E28B11C5C839E002816AC /* Images */,
+				632E28B21C5C839E002816AC /* README.md */,
 				635542451C57DD26000868FA /* BuzzScan */,
 				6355425A1C57DD26000868FA /* BuzzScanTests */,
 				635542441C57DD26000868FA /* Products */,
@@ -198,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632E28B31C5C839E002816AC /* Images in Resources */,
 				635542511C57DD26000868FA /* LaunchScreen.storyboard in Resources */,
 				6355424E1C57DD26000868FA /* Assets.xcassets in Resources */,
 				6355424C1C57DD26000868FA /* Main.storyboard in Resources */,
@@ -224,6 +231,7 @@
 				635542491C57DD26000868FA /* ScanViewController.swift in Sources */,
 				6369F7201C5C6C1F006A3026 /* SettingsTableViewController.swift in Sources */,
 				6369F71E1C5C4B17006A3026 /* Settings.swift in Sources */,
+				632E28B41C5C839E002816AC /* README.md in Sources */,
 				633F2F5F1C5BF28B0003FDDA /* IDTabBarController.swift in Sources */,
 				635542471C57DD26000868FA /* AppDelegate.swift in Sources */,
 			);
