@@ -14,9 +14,11 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var activateButton: UIButton!
+    @IBOutlet weak var torchButton: UIButton!
     
     var objCaptureSession:AVCaptureSession?
     var objCaptureVideoPreviewLayer:AVCaptureVideoPreviewLayer?
+    var objCaptureDevice:AVCaptureDevice?
     var vwCode:UIView?
     
     var idModel = IDModel()
@@ -25,6 +27,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     let playImage = UIImage(named: "Play")
     let pauseImage = UIImage(named: "Pause")
+    let flashOnImage = UIImage(named: "Flash On")
+    let flashOffImage = UIImage(named: "Flash Off")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +49,12 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func configureVideoCapture() {
-        let objCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        objCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        if objCaptureDevice?.torchMode == .On {
+            isActivated = true
+        } else {
+            isActivated = false
+        }
         var error:NSError?
         let objCaptureDeviceInput: AnyObject!
         do {
@@ -85,6 +94,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         objCaptureSession?.startRunning()
         self.view.bringSubviewToFront(statusLabel)
         self.view.bringSubviewToFront(activateButton)
+        self.view.bringSubviewToFront(torchButton)
     }
     
     func initializeQRView() {
@@ -145,6 +155,31 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         }
     }
     
+    @IBAction func toggleTorch(sender: UIButton) {
+        if objCaptureDevice!.hasTorch {
+            if isActivated {
+                do {
+                    try objCaptureDevice?.lockForConfiguration()
+                    objCaptureDevice?.torchMode = .Off
+                    objCaptureDevice?.unlockForConfiguration()
+                    torchButton.setImage(flashOnImage, forState: .Normal)
+                    isActivated = false
+                } catch {
+                    // Handle error
+                }
+            } else {
+                do {
+                    try objCaptureDevice?.lockForConfiguration()
+                    objCaptureDevice?.torchMode = .On
+                    objCaptureDevice?.unlockForConfiguration()
+                    torchButton.setImage(flashOffImage, forState: .Normal)
+                    isActivated = true
+                } catch {
+                    // Handle error
+                }
+            }
+        }
+    }
     
     // MARK: NSCoding
     

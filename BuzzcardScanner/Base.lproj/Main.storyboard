@@ -34,12 +34,25 @@
                                     <action selector="toggleScanning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AqU-xF-hBa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.64999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z99-6T-wP0">
+                                <rect key="frame" x="203" y="456" width="45" height="45"/>
+                                <color key="backgroundColor" red="0.60342359290000003" green="0.60342359290000003" blue="0.60342359290000003" alpha="0.1494625443" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="Flash On">
+                                    <color key="titleColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleTorch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHF-R2-ZAn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50731800441839703" green="0.79761826307360439" blue="0.83632607984293195" alpha="0.31551972517730498" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="aO2-gB-oSP" secondAttribute="trailing" id="CS3-DP-IET"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zNb-or-skO" secondAttribute="bottom" constant="50" id="Dnc-Kr-LwB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z99-6T-wP0" secondAttribute="bottom" constant="50" id="EPo-yK-oND"/>
                             <constraint firstItem="aO2-gB-oSP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="83" id="IS6-zd-0IQ"/>
+                            <constraint firstItem="zNb-or-skO" firstAttribute="leading" secondItem="Z99-6T-wP0" secondAttribute="trailing" constant="30" id="LvP-Jy-e3q"/>
                             <constraint firstItem="zNb-or-skO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MNJ-9G-o7v"/>
                             <constraint firstAttribute="leadingMargin" secondItem="aO2-gB-oSP" secondAttribute="leading" id="cIl-6P-mac"/>
                         </constraints>
@@ -48,6 +61,7 @@
                     <connections>
                         <outlet property="activateButton" destination="zNb-or-skO" id="NVy-Rp-g5o"/>
                         <outlet property="statusLabel" destination="aO2-gB-oSP" id="oIc-qf-ANo"/>
+                        <outlet property="torchButton" destination="Z99-6T-wP0" id="7Lj-GH-5Hz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -273,6 +287,7 @@
     </scenes>
     <resources>
         <image name="Camera" width="25" height="25"/>
+        <image name="Flash On" width="25" height="25"/>
         <image name="List" width="25" height="25"/>
         <image name="Play" width="25" height="25"/>
         <image name="Setting" width="25" height="25"/>

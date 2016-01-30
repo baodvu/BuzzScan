@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		632E28B31C5C839E002816AC /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 632E28B11C5C839E002816AC /* Images */; };
 		632E28B71C5C86C9002816AC /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 632E28B61C5C86C9002816AC /* README.md */; };
 		633F2F591C5BF1DC0003FDDA /* IDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633F2F581C5BF1DC0003FDDA /* IDModel.swift */; };
 		633F2F5F1C5BF28B0003FDDA /* IDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633F2F5E1C5BF28B0003FDDA /* IDTabBarController.swift */; };
 		635542471C57DD26000868FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635542461C57DD26000868FA /* AppDelegate.swift */; };
 		635542491C57DD26000868FA /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635542481C57DD26000868FA /* ScanViewController.swift */; };
 		6355424C1C57DD26000868FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6355424A1C57DD26000868FA /* Main.storyboard */; };
-		6355424E1C57DD26000868FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6355424D1C57DD26000868FA /* Assets.xcassets */; };
 		635542511C57DD26000868FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6355424F1C57DD26000868FA /* LaunchScreen.storyboard */; };
 		6355425C1C57DD26000868FA /* BuzzScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6355425B1C57DD26000868FA /* BuzzScanTests.swift */; };
 		6369F71E1C5C4B17006A3026 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369F71D1C5C4B17006A3026 /* Settings.swift */; };
 		6369F7201C5C6C1F006A3026 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369F71F1C5C6C1F006A3026 /* SettingsTableViewController.swift */; };
+		6375E9DC1C5C940900C6C3B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6355424D1C57DD26000868FA /* Assets.xcassets */; };
 		63DBD9A01C598D4E0001400C /* IDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBD99F1C598D4E0001400C /* IDTableViewController.swift */; };
 		63DBD9A21C5991710001400C /* IDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBD9A11C5991710001400C /* IDTableViewCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		632E28B81C5C871B002816AC /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = .md;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		635542581C57DD26000868FA /* PBXContainerItemProxy */ = {
@@ -34,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		632E28B11C5C839E002816AC /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		632E28B61C5C86C9002816AC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		633F2F581C5BF1DC0003FDDA /* IDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDModel.swift; sourceTree = "<group>"; };
 		633F2F5E1C5BF28B0003FDDA /* IDTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDTabBarController.swift; sourceTree = "<group>"; };
@@ -76,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				632E28B61C5C86C9002816AC /* README.md */,
-				632E28B11C5C839E002816AC /* Images */,
 				635542451C57DD26000868FA /* BuzzScan */,
 				6355425A1C57DD26000868FA /* BuzzScanTests */,
 				635542441C57DD26000868FA /* Products */,
@@ -134,6 +144,7 @@
 				635542411C57DD26000868FA /* Resources */,
 			);
 			buildRules = (
+				632E28B81C5C871B002816AC /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -204,9 +215,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				632E28B31C5C839E002816AC /* Images in Resources */,
+				6375E9DC1C5C940900C6C3B0 /* Assets.xcassets in Resources */,
 				635542511C57DD26000868FA /* LaunchScreen.storyboard in Resources */,
-				6355424E1C57DD26000868FA /* Assets.xcassets in Resources */,
 				6355424C1C57DD26000868FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,7 +375,7 @@
 				INFOPLIST_FILE = BuzzcardScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bvu.BuzzcardScanner;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.gatech.cc.bvu.BuzzScan;
 				PRODUCT_NAME = BuzzScan;
 			};
 			name = Debug;
@@ -377,7 +387,7 @@
 				INFOPLIST_FILE = BuzzcardScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bvu.BuzzcardScanner;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.gatech.cc.bvu.BuzzScan;
 				PRODUCT_NAME = BuzzScan;
 			};
 			name = Release;
