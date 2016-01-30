@@ -149,11 +149,11 @@
             </objects>
             <point key="canvasLocation" x="1044" y="227"/>
         </scene>
-        <!--IDs-->
+        <!--List-->
         <scene sceneID="as5-7f-MWD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2aE-83-Tx1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="IDs" image="List" id="TwR-y5-arl"/>
+                    <tabBarItem key="tabBarItem" title="List" image="List" id="TwR-y5-arl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vXM-x4-WmB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
