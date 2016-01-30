@@ -11,6 +11,6 @@ import UIKit
 class IDTabBarController: UITabBarController {
     
     let myID = IDModel()
-    let mySettings = Settings()
+    var mySettings = Settings()
     
 }

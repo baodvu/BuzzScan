@@ -36,6 +36,9 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         
         let tbc = tabBarController as! IDTabBarController
         idModel = tbc.myID
+        if let savedSettings = loadSettings() {
+            tbc.mySettings = savedSettings
+        }
         mySettings = tbc.mySettings
         
         activateButton.setImage(pauseImage, forState: .Normal)
@@ -140,6 +143,13 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             activateButton.setImage(pauseImage, forState: .Normal)
             isActivated = true
         }
+    }
+    
+    
+    // MARK: NSCoding
+    
+    func loadSettings() -> Settings? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Settings.ArchiveURL.path!) as? Settings
     }
     
 }

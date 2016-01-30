@@ -51,6 +51,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         } else {
             mySettings.mailSubject = ""
         }
+        saveSettings()
     }
 
     // MARK: - Table view data source
@@ -127,7 +128,17 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func toggleAllowDup(sender: UISwitch) {
         mySettings.allowDuplicates = !mySettings.allowDuplicates
         sender.setOn(mySettings.allowDuplicates, animated: true)
+        
+        saveSettings()
     }
     
+    // MARK: NSCoding
+    
+    func saveSettings() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(mySettings, toFile: Settings.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save settings...")
+        }
+    }
 
 }
