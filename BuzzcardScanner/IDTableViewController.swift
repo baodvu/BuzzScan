@@ -117,8 +117,24 @@ class IDTableViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     @IBAction func upload(sender: UIBarButtonItem) {
+        var fileExtension: String
+        var fileMimeType: String
+        switch mySettings.fileType {
+        case .Text: fileExtension = ".txt"
+            fileMimeType = "text/txt"
+        case .CSV:  fileExtension = ".csv"
+            fileMimeType = "text/csv"
+        }
+        
+        // Get date
+        let currentDate = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        let dateString = dateFormatter.stringFromDate(currentDate)
+        
         // Create text file containing the data
-        let file = "lab.txt"
+        let file = "log-" + dateString + fileExtension
         let fileContent = idModel.idList.joinWithSeparator("\n")
         
         if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
@@ -138,7 +154,7 @@ class IDTableViewController: UITableViewController, MFMailComposeViewControllerD
                     mailComposer.setMessageBody("(see attached file)", isHTML: false)
                     
                     if let fileData = NSData(contentsOfFile: path) {
-                        mailComposer.addAttachmentData(fileData, mimeType: "text/txt", fileName: file)
+                        mailComposer.addAttachmentData(fileData, mimeType: fileMimeType, fileName: file)
                     }
                     
                     self.presentViewController(mailComposer, animated: true, completion: nil)
