@@ -9,4 +9,5 @@ New features coming soon:
 + Regex error checking
 + Google drive integration
 + Flexible code-type selection
++ Support cvs file type
 + Improved UI (landscape-oriented)
